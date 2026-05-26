@@ -11,6 +11,9 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      - name: Set short SHA
+        run: echo "SHORT_SHA=${GITHUB_SHA::6}" >> $GITHUB_ENV    
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -45,4 +48,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: zahraehghaghi/python-app:${{ github.sha }}          
+          tags: zahraehghaghi/python-app:${{ env.SHORT_SHA }}          

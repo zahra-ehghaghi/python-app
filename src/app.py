@@ -10,7 +10,7 @@ def info():
         'hostname': socket.gethostname(),
         'time':  datetime.datetime.now().strftime("%I:%M:%S%p on %B %d, %Y"),
         'message': "Hallo man. Du machst toll ",
-        'deployed_on': 'kubernetes'
+        'deployed_on': 'kubernetes'  
 
     })
 
